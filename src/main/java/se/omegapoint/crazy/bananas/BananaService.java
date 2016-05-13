@@ -34,7 +34,7 @@ public class BananaService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "no banana!";
+        return "torskblock!";
     }
 
     private static String getResource(URI uri) throws IOException {
