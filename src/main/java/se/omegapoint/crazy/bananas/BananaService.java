@@ -21,14 +21,13 @@ public class BananaService {
     }
 
     private static String getBanana() {
-        URI uri = URI.create("http://localhost:1723/water");
+        URI waterUri = URI.create("http://localhost:1723/water");
+        URI sunUri = URI.create("http://localhost:1337/sun");
         try {
-            URLConnection connection = uri.toURL().openConnection();
-            connection.connect();
-            InputStream stream = connection.getInputStream();
-            String water = IOUtils.toString(stream, Charset.defaultCharset());
+            String water = getResource(waterUri);
+            String sun = getResource(sunUri);
 
-            if ("water!".equals(water)) {
+            if ("water!".equals(water) && "sun!".equals(sun)) {
                 return "banana!";
             }
 
@@ -36,5 +35,12 @@ public class BananaService {
             e.printStackTrace();
         }
         return "no banana!";
+    }
+
+    private static String getResource(URI uri) throws IOException {
+        URLConnection connection = uri.toURL().openConnection();
+        connection.connect();
+        InputStream stream = connection.getInputStream();
+        return IOUtils.toString(stream, Charset.defaultCharset());
     }
 }
