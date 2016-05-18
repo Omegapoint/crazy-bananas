@@ -1,3 +1,7 @@
 $(function(){
-    $("#monkey").load("/banana");
+    window.setInterval(function() {
+        $("#monkey").load("/banana");
+    },
+    3000);
+
 })
