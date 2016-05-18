@@ -16,13 +16,14 @@ import static spark.Spark.get;
 import static spark.Spark.staticFileLocation;
 
 public class BananaService {
+
     public static void main(String[] args) {
 
         staticFileLocation("/public");
-        get("/banana", (req, res) -> getBanana());
+        get("/banana", (req, res) -> getBanana(), new JsonTransformer());
     }
 
-    private static String getBanana() {
+    private static Object getBanana() {
         URI waterUri = URI.create("http://localhost:1723/water");
         URI sunUri = URI.create("http://localhost:1337/sun");
         try {
@@ -30,7 +31,7 @@ public class BananaService {
             String sun = getResource(sunUri);
 
             if ("water!".equals(water) && "sun!".equals(sun)) {
-                return "banana!";
+                return new Banana();
             }
 
         } catch (IOException e) {
