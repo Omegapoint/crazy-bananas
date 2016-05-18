@@ -13,10 +13,12 @@ import java.net.URLConnection;
 import java.nio.charset.Charset;
 
 import static spark.Spark.get;
+import static spark.Spark.staticFileLocation;
 
 public class BananaService {
     public static void main(String[] args) {
 
+        staticFileLocation("/public");
         get("/banana", (req, res) -> getBanana());
     }
 
