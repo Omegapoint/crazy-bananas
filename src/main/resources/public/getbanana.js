@@ -1,7 +1,10 @@
-$(function(){
-    window.setInterval(function() {
-        $("#monkey").load("/banana");
-    },
-    3000);
+$(function () {
+    window.setInterval(function () {
+            $.get("/banana", function (data) {
+                banana = JSON.parse(data);
+                $("#monkey").removeClass().addClass(banana.color);
+              })
+        },
+        3000);
 
 })

@@ -30,14 +30,11 @@ public class BananaService {
             String water = getResource(waterUri);
             String sun = getResource(sunUri);
 
-            if ("water!".equals(water) && "sun!".equals(sun)) {
-                return new Banana();
-            }
-
+            return new Banana(water, sun);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "torskblock!";
+        return new Banana();
     }
 
     private static String getResource(URI uri) throws IOException {

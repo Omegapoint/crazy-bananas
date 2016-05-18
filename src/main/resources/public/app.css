@@ -1,0 +1,16 @@
+#monkey {
+    width: 200px;
+    height: 200px;
+}
+
+.torskblock {
+    background-image: url("torskblock.png");
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.brown {
+    background-color: brown;
+}

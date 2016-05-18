@@ -6,7 +6,15 @@ package se.omegapoint.crazy.bananas;
 public class Banana {
     private final String color;
 
+    public Banana(String water, String sun) {
+        if ("water!".equals(water) && "sun!".equals(sun)) {
+            this.color = "yellow";
+        } else {
+            this.color = "brown";
+        }
+    }
+
     public Banana() {
-        this.color = "yellow";
+        this.color = "torskblock";
     }
 }
