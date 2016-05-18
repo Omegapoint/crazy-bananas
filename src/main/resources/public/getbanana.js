@@ -1,3 +1,3 @@
 $(function(){
-    $("#monkey").text("Give me banana")
+    $("#monkey").load("/banana");
 })
