@@ -1,4 +1,6 @@
-package se.omegapoint.crazy.bananas;
+package se.omegapoint.crazy.bananas.source;
+
+import se.omegapoint.crazy.bananas.JsonTransformer;
 
 import static spark.Spark.get;
 import static spark.Spark.port;
@@ -9,7 +11,8 @@ import static spark.Spark.port;
 public class WaterService {
     public static void main(String[] args) {
         port(1723);
-        get("/water", (req, res) -> "water!");
+        get("/water", (req, res) -> new DropOfWater(),
+                new JsonTransformer());
     }
 
 }

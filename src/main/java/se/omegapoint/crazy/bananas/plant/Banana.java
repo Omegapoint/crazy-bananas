@@ -1,4 +1,7 @@
-package se.omegapoint.crazy.bananas;
+package se.omegapoint.crazy.bananas.plant;
+
+import se.omegapoint.crazy.bananas.source.DropOfWater;
+import se.omegapoint.crazy.bananas.sun.SunRay;
 
 /**
  * Created by piolin on 18/05/16.
@@ -6,8 +9,8 @@ package se.omegapoint.crazy.bananas;
 public class Banana {
     private final String color;
 
-    public Banana(String water, String sun) {
-        if ("water!".equals(water) && "sun!".equals(sun)) {
+    public Banana(DropOfWater water, SunRay sun) {
+        if (water.secret().equals(sun.secret())) {
             this.color = "yellow";
         } else {
             this.color = "brown";
