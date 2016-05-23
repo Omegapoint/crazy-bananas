@@ -7,8 +7,8 @@ public class DropOfWater {
 
     private final String secret;
 
-    public DropOfWater() {
-        secret = "secret";
+    public DropOfWater(String secret) {
+        this.secret = secret;
     }
 
     public String secret() {

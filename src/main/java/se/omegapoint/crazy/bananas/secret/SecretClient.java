@@ -17,6 +17,7 @@ public class SecretClient {
     private final Gson gson = new Gson();
 
     public final Secret secret() {
+
         URI uri = URI.create("http://localhost:1111/secret");
         try {
             URLConnection connection = uri.toURL().openConnection();

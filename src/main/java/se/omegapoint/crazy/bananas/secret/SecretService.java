@@ -10,8 +10,18 @@ import static spark.Spark.port;
  */
 public class SecretService {
 
+    // TODO pisu: thread-safe me!
+    private static Secret cached = new Secret();
+
     public static void main(String[] args) {
         port(1111);
-        get("/secret", (req, res) -> new Secret(), new JsonTransformer());
+        get("/secret", (req, res) -> secret(), new JsonTransformer());
+    }
+
+    private static Secret secret() {
+        if (cached.hasExpired()) {
+            cached = new Secret();
+        }
+        return cached;
     }
 }
