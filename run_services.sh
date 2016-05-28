@@ -2,7 +2,7 @@
 
 mvn package
 
-mvn exec:java -Dexec.mainClass="se.omegapoint.crazy.bananas.secret.SecretService" &
-mvn exec:java -Dexec.mainClass="se.omegapoint.crazy.bananas.sun.SunService" &
-mvn exec:java -Dexec.mainClass="se.omegapoint.crazy.bananas.source.WaterService" &
-mvn exec:java -Dexec.mainClass="se.omegapoint.crazy.bananas.plant.BananaService" &
+./run_service.sh "secret.SecretService"
+./run_service.sh "sun.SunService"
+./run_service.sh "source.WaterService"
+./run_service.sh "plant.BananaService"
