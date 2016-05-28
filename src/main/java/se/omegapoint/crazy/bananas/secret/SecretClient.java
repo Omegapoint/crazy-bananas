@@ -15,12 +15,12 @@ import java.nio.charset.Charset;
 public class SecretClient {
 
     private final Gson gson = new Gson();
+    private final static URI URI = java.net.URI.create("http://localhost:1111/secret");
 
     public final Secret secret() {
 
-        URI uri = URI.create("http://localhost:1111/secret");
         try {
-            URLConnection connection = uri.toURL().openConnection();
+            URLConnection connection = URI.toURL().openConnection();
             connection.connect();
             InputStream stream = connection.getInputStream();
             return gson.fromJson(IOUtils.toString(stream, Charset.defaultCharset()), Secret.class);
