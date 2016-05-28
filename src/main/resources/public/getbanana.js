@@ -5,6 +5,6 @@ $(function () {
                 $("#monkey").removeClass().addClass(banana.color);
               })
         },
-        3000);
+        1000);
 
 })
