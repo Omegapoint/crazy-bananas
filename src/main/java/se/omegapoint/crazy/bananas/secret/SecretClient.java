@@ -26,7 +26,7 @@ public class SecretClient {
             return gson.fromJson(IOUtils.toString(stream, Charset.defaultCharset()), Secret.class);
         }
         catch (IOException e) {
-            System.out.println("Not expected here: " + e);
+            System.out.println("Totally expected error when trying to fetch a secret: " + e);
         }
         return new Secret();
     }
