@@ -10,7 +10,7 @@ while true; do
         array_of_pids=($PIDS)
         UNLUCKY_PID=${array_of_pids[UNLUCKY]}
         echo "Monkey killing" ${UNLUCKY_PID:-"none"}
-        kill $UNLUCKY_PID 2&>1 /dev/null
+        kill $UNLUCKY_PID 2&> /dev/null
     done
     echo "Monkey resting for a while"
     sleep_time=$(jot -r 1 3 20)
