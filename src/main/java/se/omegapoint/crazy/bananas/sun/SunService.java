@@ -16,8 +16,12 @@ public class SunService {
 
     public static void main(String[] args) {
         port(2222);
-        Spark.get("/sun", (req, res) -> new SunRay(client.secret().secret()),
+        Spark.get("/sun", (req, res) -> getSunRay(),
                 new JsonTransformer());
+    }
+
+    private static SunRay getSunRay() {
+        return new SunRay(client.secret().secret());
     }
 
 }

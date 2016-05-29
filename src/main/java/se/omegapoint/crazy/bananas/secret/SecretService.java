@@ -15,14 +15,17 @@ import static spark.Spark.port;
  */
 public class SecretService {
 
-    // TODO pisu: thread-safe me!
     private static AtomicReference<Secret> cached = new AtomicReference<>(new Secret());
 
     public static void main(String[] args) {
         port(1111);
-        get("/secret", (req, res) -> cached.get(), new JsonTransformer());
+        get("/secret", (req, res) -> getSecret(), new JsonTransformer());
         ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
         executorService.scheduleAtFixedRate(() -> updateSecret(), 5, 5, TimeUnit.SECONDS);
+    }
+
+    private static Secret getSecret() {
+        return cached.get();
     }
 
     private static void updateSecret() {

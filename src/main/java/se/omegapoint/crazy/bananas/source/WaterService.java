@@ -15,8 +15,12 @@ public class WaterService {
 
     public static void main(String[] args) {
         port(1723);
-        get("/water", (req, res) -> new DropOfWater(client.secret().secret()),
+        get("/water", (req, res) -> getDropOfWater(),
                 new JsonTransformer());
+    }
+
+    private static DropOfWater getDropOfWater() {
+        return new DropOfWater(client.secret().secret());
     }
 
 }
