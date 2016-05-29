@@ -14,7 +14,7 @@ import java.nio.charset.Charset;
 public class WaterClient {
 
     private final Gson gson = new Gson();
-    private final static java.net.URI URI = java.net.URI.create("http://localhost:1723/water");
+    private final static java.net.URI URI = java.net.URI.create("http://localhost:3333/water");
 
     public DropOfWater dropOfWater() {
 

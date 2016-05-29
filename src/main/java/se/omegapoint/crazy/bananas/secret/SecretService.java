@@ -18,7 +18,7 @@ public class SecretService {
     private static AtomicReference<Secret> cached = new AtomicReference<>(new Secret());
 
     public static void main(String[] args) {
-        port(1111);
+        port(Integer.parseInt(System.getProperty("port", "1111")));
         get("/secret", (req, res) -> getSecret(), new JsonTransformer());
         ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
         executorService.scheduleAtFixedRate(() -> updateSecret(), 5, 5, TimeUnit.SECONDS);

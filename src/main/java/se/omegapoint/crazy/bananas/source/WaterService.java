@@ -14,7 +14,7 @@ public class WaterService {
     private static final SecretClient client = new SecretClient();
 
     public static void main(String[] args) {
-        port(1723);
+        port(Integer.parseInt(System.getProperty("port", "3333")));
         get("/water", (req, res) -> getDropOfWater(),
                 new JsonTransformer());
     }

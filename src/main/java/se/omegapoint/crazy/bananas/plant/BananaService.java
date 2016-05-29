@@ -9,6 +9,7 @@ import se.omegapoint.crazy.bananas.source.WaterClient;
 import se.omegapoint.crazy.bananas.sun.SunClient;
 import spark.Spark;
 
+import static spark.Spark.port;
 import static spark.Spark.staticFileLocation;
 
 public class BananaService {
@@ -17,7 +18,7 @@ public class BananaService {
     private static final WaterClient waterClient = new WaterClient();
 
     public static void main(String[] args) {
-
+        port(Integer.parseInt(System.getProperty("port", "4444")));
         staticFileLocation("/public");
         Spark.get("/banana", (req, res) -> getBanana(), new JsonTransformer());
     }

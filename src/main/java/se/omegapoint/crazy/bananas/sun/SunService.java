@@ -15,7 +15,7 @@ public class SunService {
     private static final SecretClient client = new SecretClient();
 
     public static void main(String[] args) {
-        port(2222);
+        port(Integer.parseInt(System.getProperty("port", "2222")));
         Spark.get("/sun", (req, res) -> getSunRay(),
                 new JsonTransformer());
     }
