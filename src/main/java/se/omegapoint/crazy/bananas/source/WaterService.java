@@ -20,6 +20,11 @@ public class WaterService {
     }
 
     private static DropOfWater getDropOfWater() {
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return new DropOfWater(client.secret().secret());
     }
 
