@@ -12,14 +12,16 @@ import static spark.Spark.port;
 public class WaterService {
 
     private static final SecretClient client = new SecretClient();
+    private static final int port = Integer.parseInt(System.getProperty("port", "3333"));
 
     public static void main(String[] args) {
-        port(Integer.parseInt(System.getProperty("port", "3333")));
+        port(port);
         get("/water", (req, res) -> getDropOfWater(),
                 new JsonTransformer());
     }
 
     private static DropOfWater getDropOfWater() {
+        System.out.println("Returning a drop of water. My port is: " + port);
         return new DropOfWater(client.secret().secret());
     }
 
