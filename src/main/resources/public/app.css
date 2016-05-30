@@ -1,7 +1,7 @@
 #monkey {
     width: 200px;
     height: 200px;
-    background-size: cover;
+    background-size: contain;
     display: inline-block;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .happy {
-    background-image: url("Curious_George.png");
+    background-image: url("happy.png");
 }
 
 .disappointed {
