@@ -1,7 +1,7 @@
 $(function () {
 
     function updateMonkey(bananaColor) {
-        $("#monkey").removeClass().addClass(bananaColor);
+        $("#banana").removeClass().addClass(bananaColor);
     }
 
     window.setInterval(function () {

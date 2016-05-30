@@ -1,6 +1,14 @@
 #monkey {
     width: 200px;
     height: 200px;
+    background-size: cover;
+    display: inline-block;
+}
+
+#banana {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
 }
 
 .torskblock {
@@ -13,4 +21,16 @@
 
 .brown {
     background-color: brown;
+}
+
+.happy {
+    background-image: url("Curious_George.png");
+}
+
+.disappointed {
+    background-image: url("disappointed.jpeg");
+}
+
+.angry {
+    background-image: url("chaos_monkey.png");
 }
