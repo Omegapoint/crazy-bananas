@@ -8,6 +8,7 @@
 #banana {
     width: 200px;
     height: 200px;
+    background-size: contain;
     display: inline-block;
 }
 
@@ -16,11 +17,11 @@
 }
 
 .yellow {
-    background-color: yellow;
+    background-image: url("yellow.jpg");
 }
 
 .brown {
-    background-color: brown;
+    background-image: url("brown.jpg");
 }
 
 .happy {
