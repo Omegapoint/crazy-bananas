@@ -18,7 +18,6 @@ public class SecretClient {
     private final static URI URI = java.net.URI.create("http://localhost:1111/secret");
 
     public final Secret secret() {
-
         try {
             URLConnection connection = URI.toURL().openConnection();
             connection.connect();
@@ -26,7 +25,7 @@ public class SecretClient {
             return gson.fromJson(IOUtils.toString(stream, Charset.defaultCharset()), Secret.class);
         }
         catch (IOException e) {
-            System.out.println("Totally expected error when trying to fetch a secret: " + e);
+            System.out.println("Totally unexpected error when trying to fetch a secret: " + e);
         }
         return new Secret();
     }
