@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 PORTS="$@"
-MAX_SLEEP_TIME="30000"
+MAX_SLEEP_TIME="10000"
 
 while true; do
     echo "Monkey found ${PIDS:-none} for $SERVICE"
-    UNLUCKY=`jot -r 1 0 $#`
+    UNLUCKY=`jot -r 1 1 $#`
     UNLUCKY_SERVICE=${!UNLUCKY}
     SERVICE_SLEEP_TIME=$(jot -r 1 0 $MAX_SLEEP_TIME)
     echo "Monkey delaying service on port "${UNLUCKY_SERVICE:-"none"} "with" $SERVICE_SLEEP_TIME "millis"
