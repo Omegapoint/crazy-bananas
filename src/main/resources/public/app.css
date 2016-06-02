@@ -35,3 +35,10 @@
 .angry {
     background-image: url("chaos_monkey.png");
 }
+
+
+/* Preloading images */
+body:after{
+    position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+    content: url("torskblock.png") url("yellow.jpg") url("brown.jpg") url("happy.png") url("disappointed.jpeg") url("chaos_monkey.png");
+}
