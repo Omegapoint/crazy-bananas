@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+mvn package
+
+./run_service "secret.SecretService" 1111
+./run_service "sun.SunService" 2222
+./run_service "sun.SunService" 2223
+./run_service "source.WaterService" 3333
+./run_service "source.WaterService" 3334
+./run_service "plant.BananaService" 4444
+./run_service "delay.SleepAsAService" 5555
