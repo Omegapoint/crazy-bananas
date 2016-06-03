@@ -4,7 +4,7 @@ INVERTED_PROBABILITY=3
 
 while true; do
     for SERVICE in $@; do
-        PIDS=$(ps -e | grep -v grep | grep -v bash | grep "$SERVICE" | cut -d ' ' -f 1)
+        PIDS=$(ps -e | grep -v grep | grep -v bash | grep "$SERVICE" | sed -e 's/^[ \t]*//' | cut -d ' ' -f 1)
         echo "Monkey found ${PIDS:-none} for $SERVICE"
         UNLUCKY=$(jot -r 1 0 $INVERTED_PROBABILITY)
         array_of_pids=($PIDS)
